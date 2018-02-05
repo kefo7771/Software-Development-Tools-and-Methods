@@ -1,0 +1,174 @@
+Ken Ford
+CSCI 3308 
+Lab 2
+
+Step 1
+curl -L https://gist.github.com/dgraham/acfdc4ffc2d6e74fd587/archive/f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce.zip > lab2.zip
+unzip lab2.zip -d lab2
+cd lab2
+
+//Step 2
+
+user@cu-cs-vm:~$ cd lab2
+user@cu-cs-vm:~/lab2$ ls
+acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce
+user@cu-cs-vm:~/lab2$ cd acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce/
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ ls
+fruitsNew.txt  grades.txt     regex_practice_data.txt
+fruitsOld.txt  leetSpeak.txt  testPasswd.txt
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ diff fruitsNew.txt fruitsOld.txt
+11a12
+> Cranberry
+21d21
+< Jackfruit
+31a32
+> Nectarine
+40a42
+> Prickly Pear
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ 
+//The < and > indicate which file the word has come from
+//The -c command outputs lines of copied context, with a default of 3 lines.
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ diff -c fruitsNew.txt fruitsOld.txt 
+*** fruitsNew.txt	2016-01-19 19:45:55.000000000 -0700
+--- fruitsOld.txt	2016-01-19 19:45:55.000000000 -0700
+***************
+*** 9,14 ****
+--- 9,15 ----
+  Camu Camu berry
+  Cherries
+  Coconut
++ Cranberry
+  Cucumber
+  Currents
+  Dates
+***************
+*** 18,24 ****
+  Gooseberry
+  Grapefruit
+  Grapes
+- Jackfruit
+  Kiwi
+  Kumquat
+  Lemon
+--- 19,24 ----
+***************
+*** 29,34 ****
+--- 29,35 ----
+  Mangosteen
+  Melon
+  Mulberry
++ Nectarine
+  Orange
+  Papaya
+  Passion Fruit
+***************
+*** 38,43 ****
+--- 39,45 ----
+  Plum
+  Pomegranate
+  Pomelo 
++ Prickly Pear
+  Prunes
+  Raspberries
+
+//Step 3
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ ls
+fruitsNew.txt  grades.txt     regex_practice_data.txt
+fruitsOld.txt  leetSpeak.txt  testPasswd.txt
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ wc testPasswd.txt
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ wc -m testPasswd.txt 
+692 testPasswd.txt
+
+//Step 4
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ cut -d ":" -f 1 testPasswd.txt 
+root
+daemon
+sys
+games
+mail
+www-data
+backup
+nobody
+syslog
+whoopsie
+user
+sshd
+ntp
+mysql
+vboxadd
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ cut -d ' ' -f2,4 grades.txt 
+LN HW1
+Slaven 1
+Eustathios 1
+Saša 0
+Gerard 1
+Babur 0
+Marin 0
+Marko 1
+
+//Step 5
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ cut -d ":" -f4 testPasswd.txt | sort -n | uniq -c
+      1 0
+      3 1
+      2 2
+      1 3
+      1 5
+      2 99
+      1 999
+      2 1000
+      2 1337
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ cut -d ":" -f4 testPasswd.txt | sort -n | uniq -c> test.txt
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ cut -d: -f1,6 testPasswd.txt | grep '^[mws]'
+sys:/dev
+mail:/var/mail
+www-data:/var/www
+syslog:/home/syslog
+whoopsie:/nonexistent
+sshd:/var/run/sshd
+mysql:/nonexistent
+
+//Step 6
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ sed 's/[a-zA-Z]//g' leetSpeak.txt 
+0 4 34 4 053 70 473 7 0 4'7 43 17 1
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ sed 's/[0-9]//g' leetSpeak.txt 
+yu cn ld  hr  wr bu yu cn' mk  drnk
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ sed 's/'[0-9]'/\_/g' leetSpeak.txt 
+y_u c_n l__d _ h_r__ __ w___r bu_ y_u c_n'_ m_k_ __ dr_nk
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ sed 's/'0'/'o'/g' leetSpeak.txt | sed 's/'4'/'a'/g' | sed 's/'3'/'e'/g'| sed 's/'5'/'s'/g' | sed 's/'7'/'t'/g' | sed 's/'1'/'i'/g' 
+you can lead a horse to water but you can't make it drink
+
+//Step 7
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ awk '{print $1,$2,(($3+$4+$5+$6+$7)/5)*100}' grades.txt 
+FN LN 0
+Ryan Slaven 80
+Jephthah Eustathios 40
+Andreas Saša 60
+Godofredo Gerard 100
+Edwin Babur 80
+Ahmad Marin 0
+Jett Marko 80
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ awk '{total+=$3;count++} END {print total/count}' grades.txt 
+0.625
+
+//Step 8
+
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ grep '[0-9]*\-[0-9]*\-[0-9]' regex_practice_data.txt| wc -l
+770
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ grep '[303,414]\-[0-9]*\-[0-9]' regex_practice_data.txt | wc -l
+719
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" regex_practice_data.txt | wc -l
+17705
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[gov]{2,6}\b" regex_practice_data.txt | wc -l
+52
+user@cu-cs-vm:~/lab2/acfdc4ffc2d6e74fd587-f6f52f1d2a89d627cdee9f3ae76f23f4eefa24ce$ grep -E -o "\b^[A-Za-z-]+\.[A-Za-z0-9.-%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" regex_practice_data.txt | wc -l
+474
+
+
+
+
+
