@@ -1,0 +1,36 @@
+1. When I run pi, it seg faults.
+
+2. Line 89 = crash
+
+3. The pointer pt was not allocated.
+
+4. gdb> b zeroDist
+
+5. p other_pt->x 
+   x = -865427027
+
+6. p other_pt->y
+   y = 369343149
+
+7. delete breakpoints
+
+8. The code is leaking memory. It is has definitely lost 31,999,984 bytes and possibly lost 16 bytes.
+
+9. The problem lines are 41 and 92
+
+10. The problem on line 41 was that we didn't free the memory space used by zero_pt. I fixed it by using the function free(zero_pt). The problem on line 92 was that pt also had to be freed up. I used free(pt).
+
+11. Iterations: 7,550,000 iterations
+    Program run time: 1.00 s
+
+12. Top 5 Places:
+    1. zeroDist -- 70.62%
+    2. dist -- 25.63%
+    3. malloc <cycle 1> -- 19.74%
+    4. pow -- 18.98% 
+    5. random -- 16.31
+
+13. I can make the code faster by getting rid of the call to dist, as it takes up a large amount of processing time. To fix this, we can incorporate this code directly into zeroDist instead of calling a separate function. Also, I got rid of the zero pointer as it was redundant.
+
+14. Original time : .13s
+    New time: .08s
