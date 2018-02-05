@@ -1,0 +1,66 @@
+Snippet 1:
+  Format:
+    No line spaces makes it harder to read
+    Tabs successfully provide organization to logic    
+  Style:
+    Code is formatted well with tabs, so that I can follow along.
+    Loops are organized along with definitons,etc.
+  Naming:
+    Variable names are vague, harder to understand code without following each variable path
+    Change variable names from one letter to something more descriptive
+  Design:
+    No comments to follow along and understand train of thought
+  Readability:
+    Readability is hampered by lack of spaces and vague variables
+    Unclear of overall purpose of code with no comments
+    Variable declarations are too complex, hard to read what they are equal to
+  Functionality:
+    On line 19, the file path does not exist. Need another solution than hard-coding path.
+
+Snippet 2: 
+  Format:
+    Format looks good.
+  Style:
+    Style looks good.
+  Naming:
+    Variables are better named this time, give context to what their role is
+  Design:
+    Some comments, but they need to be more assertive in what they are describing
+    Still unclear on purpose of code as it seems so too is the author
+  Readability:
+    Some variable declarations are too complex to easily read and understand, see "new"
+  Functionality:
+    Code breaks at lines 22 and 55
+    File path line does not seem to find a suitable file path to run this code
+         
+Snippet 3: 
+  Format:
+    Spacing provides blocks of thought to follow easily
+    Tabs continue to be good
+  Style:
+    Style still looks good.
+  Naming:
+    Variable names are still easy to understand.
+  Design:
+    Less comments than before, need them for better understanding
+  Readability:
+    Comments are reduced, leading to harder understanding
+    Comment on line 56 shouldn't cite the directions
+  Functionality:
+    File path is hard coded in again
+    This causes problems running the code as I don't have that directory on my computer
+
+Snippet 4:
+  Format:
+    Looks solid
+  Style:
+    Looks solid
+  Naming:
+    Variables are named well
+  Design:
+    Existing comments are assertive and descriptive of dfferent code portions
+    Could use some more comments towards the end describing purpose of lines 67-75
+  Readability:
+    Easy to read with spacing, tab formatting, etc.
+  Functionality:
+    Was unable to get the code to find a directory still
