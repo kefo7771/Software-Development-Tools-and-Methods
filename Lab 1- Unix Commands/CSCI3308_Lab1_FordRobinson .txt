@@ -1,0 +1,48 @@
+Ken Ford
+Kristin Robinson
+CSCI 3308
+Lab 1
+
+
+Step 4
+
+mkdir cs3308
+mv cs3308 csci3308
+cd
+cp file1.txt file2.txt
+rm file2.txt
+mkdir tmp
+rmdir tmp
+cat file1.txt
+more file1.txt
+head file1.txt
+tail file1.txt
+grep -l the *
+find . -type f -name 'books.txt'
+zip -r dir.zip csci3308
+unzip dir.zip -d tmp
+tar -czvf dir.tar csci3308
+tar -xvf dir.tar -c tmp
+touch -a file1.txt
+
+
+Step 5
+
+sort -t : -k 1 Lab1
+sort -n -t : -k 3 Lab1
+sort -g -t : -k 4 Lab1 | sort -g -t : -k 3 Lab1
+grep Marx Lab1
+wc -1 Lab1
+wc -l Lab1 > tmp
+wc -l Lab1 > tmp.sh
+chmod a+x tmp
+chmod a+x tmp.sh
+chmod 333 tmp.sh
+./tmp.sh runs
+the file type .sh denotes a shell script. Shell scripts are executable from the terminal
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+Ken Ford
+Kristin Robinson
+CSCI 3308
+Lab 1
+
+
+Step 4
+
+mkdir cs3308
+mv cs3308 csci3308
+cd
+cp file1.txt file2.txt
+rm file2.txt
+mkdir tmp
+rmdir tmp
+cat file1.txt
+more file1.txt
+head -1 file1.txt
+tail file1.txt
+grep the *
+find . -type f -name 'books.txt'
+zip -r dir.zip csci3308
+unzip dir.zip -d tmp
+tar -czvf dir.tar dir.zip
+tar -xvf dir.tar -c tmp
+touch -a file1.txt
+
+
+Step 5
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+bin:x:1:1:bin:/bin:/sbin/nologin
+harpo:x:12502:1000:Harpo Marx:/home/harpo:/bin/csh
+chico:x:12501:1000:Chico Marx:/home/chico:/bin/bash
+zeppo:x:12505:1000:Zeppo Marx:/home/zeppo:/bin/zsh
+groucho:x:12503:2000:Grouch Marx:/home/groucho:/bin/sh
+gummo:x:12504:3000:Gummo Marx:/home/gummo:/usr/local/bin/ksh
+
+sort -g -t : -k 1 Lab1
+sort -g -t : -k 3 Lab1
+sort -g -t : -k 4 Lab1
+sort -g -t : -k 3 Lab1
+grep Marx *
+wc -1 Lab1
+wc -l Lab1 > tmp
+wc -l Lab1 > tmp.sh
+
+
+
+
+
+
